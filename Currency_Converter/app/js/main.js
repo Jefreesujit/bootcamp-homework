@@ -44,7 +44,7 @@ var template1 = $("#entry-template2").html();
 
 var templatecompile1 = Handlebars.compile(template1);
 
-	$("#btn").on('click' , function(event){
+	$("#select-list1 , #select-list2 , #amount ").on('change' , function(event){
 
 	var a = $("#select-list1 option:selected").val();
 	var b = $("#amount").val();
