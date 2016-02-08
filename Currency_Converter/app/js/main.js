@@ -62,7 +62,7 @@ var templatecompile1 = Handlebars.compile(template1);
 
 		if ( data != null)  {
 
-		var context = {to :data.to, to_amount: (data.to_amount).toFixed(2) };
+		var context = {from:data.from, to :data.to, from_amount:data.from_amount, to_amount: (data.to_amount).toFixed(2) };
 
 		var output = templatecompile1(context);
 
