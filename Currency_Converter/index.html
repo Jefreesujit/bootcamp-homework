@@ -29,12 +29,14 @@
 				<div id="input-content" class="input-content">
 					<h2>Currency Converter</h2>
 					<div>	      		
+					<!-- There is no need for !imortant in inline styles. -->
 					<div id="select-list1" class="select-list" style="width:200px !important"></div>
 					<input type="number" class="textbox" id="amount" autofocus placeholder="Type the amount" value="0">
 					<div id="select-list2" class="select-list"></div>
 					</div>	
 				</div>
 
+				<!-- Semantic id names would be great -->
 				<script id="entry-template" type="text/x-handlebars-template">
 					<select name="submenu" id="submenu" class="submenu" >
 						{{#each getData}}
@@ -43,6 +45,7 @@
 					</select>
 				</script>
 
+				<!-- Semantic id names would be great -->
 				<script id="entry-template2" type="text/x-handlebars-template">
 					<div class="template-op">
 					<p >{{from_amount}} {{from}} = {{to_amount}}  {{to}}</p></div>

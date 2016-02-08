@@ -44,6 +44,8 @@ var template1 = $("#entry-template2").html();
 
 var templatecompile1 = Handlebars.compile(template1);
 
+	/* By listening to the change event you are forcing the user to click outside 
+	   the input box for him to see the result. Using key up would have been more effective */
 	$("#select-list1 , #select-list2 , #amount ").on('change' , function(event){
 
 	var a = $("#select-list1 option:selected").val();
@@ -54,7 +56,9 @@ var templatecompile1 = Handlebars.compile(template1);
 
 	$.ajax({
 
-		url: link11+a+link12+b+link13+c ,
+		url: link11+a+link12+b+link13+c , /* This makes it difficult for anybody to understand what is 
+											 happening here. Please use more menaing full names so that 
+											 people can understand what is happening */
 		type: 'GET',
 		headers: { 'X-Mashape-Key' : key },
 
@@ -62,13 +66,20 @@ var templatecompile1 = Handlebars.compile(template1);
 
 		if ( data != null)  {
 
-		var context = {from:data.from, to :data.to, from_amount:data.from_amount, to_amount: (data.to_amount).toFixed(2) };
+		// This will make it easier to understand the content of the context object
+		var context = {
+			from:data.from, 
+			to :data.to, 
+			from_amount:data.from_amount, 
+			to_amount: (data.to_amount).toFixed(2) 
+		};
 
 		var output = templatecompile1(context);
 
 		$("#output-box").html(output);  
 		
-		}  }
+		}  
+	}
 
 	});
 
